@@ -1,4 +1,3 @@
-
 // Using the url below:
 // https://api.publicapis.org/entries
 // Do 1 of the two challenges.
@@ -14,14 +13,29 @@
 // // Instructions:
 // // Using the api.publicapis.org/entries endpoint:
 // // Use fetch to call the data (const fetch = require('node-fetch'))
-// // Parse the data and return output to terminal based on a dynamic random category choice 
+// // Parse the data and return output to terminal based on a dynamic random category choice
 // // The random choice must come from the categories available in the api
 // // Do not hard code the categories.
 // // List the resulting data in the terminal as it is formatted below
-// // Make sure to also list the category in the opening string in all caps 
+// // Make sure to also list the category in the opening string in all caps
 // // The dynamically chosen random category below is Animals
 // // Copy the format
-// EXAMPLE OUTPUT: 
+// EXAMPLE OUTPUT:
+const fetch1 = require("node-fetch");
+
+let url1 = `https://api.publicapis.org/entries`
+
+fetch1(url1).then((response)=>response.json()).then((data)=>{
+    data.entries.forEach(({API, Description, Link, Category})=>{
+    // if ( Category === 'Animals'){
+      console.log(`API: ${API}\nDescription: ${Description}\nLink: ${Link}\nCategory: ${Category='Animals'}\n\n---\n\n`)
+    // }
+  
+  })
+  
+})
+
+
 
 // You random category is ANIMALS:
 
@@ -94,10 +108,11 @@
 // // Then refactor and use array methods if you can
 // // Also use destructuring if you can
 // // Refer to the video instructions
-
+console.clear();
 // SUMMARY:
 // API Data from https://api.publicapis.org/entries:
 // 3 Options listed per Category.
+
 
 // OUTPUT SHOULD BE:
 
